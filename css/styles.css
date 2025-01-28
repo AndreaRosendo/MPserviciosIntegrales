@@ -1,0 +1,162 @@
+/* Efecto de escritura automática */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  .typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    animation: typing 6s steps(100, end), blink 0.5s step-end infinite;
+  }
+  
+  /* Efecto al scrollear */
+  .scroll-effect {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Ajustes del carrusel */
+  .carousel img {
+    max-width: 100%;
+    display: block;
+  }
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Estilos del botón para subir */
+  #scroll-top {
+    display: none; /* Ocultamos el botón inicialmente */
+    z-index: 100; /* Para que esté por encima de otros elementos */
+  }
+  
+  #scroll-top:hover {
+    transform: scale(1.2); /* Efecto de agrandarse al pasar el mouse */
+    background-color: #2563eb; /* Cambiar a un azul más claro */
+  }
+  
+  /* Fondo de sección 2 */
+  #presentacion {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* General: Diseño responsivo con flexbox y grid */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Para evitar desbordamientos en pantallas pequeñas */
+  }
+  
+  /* Header: Asegurar que se vea bien en todas las pantallas */
+  header {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  header img {
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  header div {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  header button {
+    margin-top: 10px;
+  }
+  
+  /* Sección 1: Diseño responsivo */
+  #inicio {
+    flex-direction: column;
+    text-align: center;
+  }
+  #inicio img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  /* Sección 2: Texto en fondo adaptable */
+  #presentacion {
+    padding: 20px;
+    background-size: cover;
+  }
+  
+  /* Sección 3: Grid responsivo para los servicios */
+  #servicios .grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna por defecto */
+  }
+  @media (min-width: 768px) {
+    #servicios .grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+    }
+  }
+  @media (min-width: 1024px) {
+    #servicios .grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    }
+  }
+  
+  /* Carrusel: Imágenes responsivas */
+  .carousel img {
+    max-width: 100%;
+    height: auto;
+  }
+ 
+  /* Cards (Sección 5): Adaptar a filas en pantallas pequeñas */
+  #elegirnos .grid {
+    grid-template-columns: 1fr; /* Una columna por defecto */
+    gap: 20px;
+  }
+  @media (min-width: 768px) {
+    #elegirnos .grid {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+    }
+  }
+  @media (min-width: 1024px) {
+    #elegirnos .grid {
+      grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+    }
+  }
+  
+  /* Botón de scroll-top */
+  #scroll-top {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    #scroll-top {
+      bottom: 10px;
+      right: 10px;
+      width: 50px; /* Tamaño reducido en móviles */
+      height: 50px;
+    }
+  }
+  
+  /* Menú desplegable responsivo */
+  #menu ul {
+    font-size: 18px;
+  }
+  
+  
+  
