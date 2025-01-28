@@ -5,28 +5,25 @@ let currentSlide = 0;
 
 // Menú desplegable
 menuButton.addEventListener('click', () => {
-  menu.classList.toggle('-translate-x-full');
-});
-
-const scrollTopButton = document.getElementById('scroll-top');
-
-// Mostrar u ocultar el botón al hacer scroll
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    scrollTopButton.style.display = 'block'; // Mostrar el botón
-  } else {
-    scrollTopButton.style.display = 'none'; // Ocultarlo
-  }
-});
-
-// Subir al principio de la página al hacer clic
+    menu.classList.toggle('-translate-x-full');
+  });
+  
+  // Botón para subir arriba
+  const scrollTopButton = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollTopButton.style.display = 'block';
+    } else {
+      scrollTopButton.style.display = 'none';
+    }
+  });
+  
 scrollTopButton.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // Efecto suave al desplazarse hacia arriba
+    behavior: 'smooth'
   });
 });
-
 
 // Carrusel automático
 setInterval(() => {
